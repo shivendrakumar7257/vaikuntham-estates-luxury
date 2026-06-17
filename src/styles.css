@@ -32,8 +32,8 @@
   --color-gold-soft: var(--gold-soft);
   --color-navy: var(--navy);
   --color-charcoal: var(--charcoal);
-  --font-display: "Cormorant Garamond", "Playfair Display", serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Playfair Display", "Bodoni Moda", serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
 }
 
 :root {
