@@ -1,29 +1,56 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import { Properties } from "@/components/site/Properties";
+import {
+  WhyChoose,
+  Categories,
+  Showcase,
+  Investment,
+  About,
+  Testimonials,
+  Projects,
+  EMI,
+  FAQ,
+  Contact,
+  Newsletter,
+  Footer,
+  FloatingActions,
+} from "@/components/site/Sections";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Vaikuntham — Luxury Real Estate · Where Luxury Meets Legacy" },
+      { name: "description", content: "Vaikuntham curates India's most exceptional villas, penthouses, and investment properties for discerning buyers and investors." },
+      { property: "og:title", content: "Vaikuntham — Luxury Real Estate" },
+      { property: "og:description", content: "Discover exceptional living — luxury residences, premium villas & investment opportunities." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="bg-background text-foreground">
+      <Nav />
+      <main>
+        <Hero />
+        <Properties />
+        <WhyChoose />
+        <Categories />
+        <Showcase />
+        <Investment />
+        <About />
+        <Testimonials />
+        <Projects />
+        <EMI />
+        <FAQ />
+        <Contact />
+        <Newsletter />
+      </main>
+      <Footer />
+      <FloatingActions />
     </div>
   );
 }
