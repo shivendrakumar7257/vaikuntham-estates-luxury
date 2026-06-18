@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 const links = [
-  { label: "Properties", href: "#properties" },
-  { label: "Categories", href: "#categories" },
-  { label: "Investment", href: "#investment" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
+  { label: "Home", to: "/" },
+  { label: "Properties", to: "/properties" },
+  { label: "Categories", to: "/categories" },
+  { label: "Investment", to: "/investment" },
+  { label: "Projects", to: "/projects" },
+  { label: "About", to: "/about" },
+  { label: "Contact", to: "/contact" },
+] as const;
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -28,7 +30,7 @@ export function Nav() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3 group">
+        <Link to="/" className="flex items-center gap-3 group">
           <div className="h-9 w-9 rounded-full bg-gradient-gold grid place-items-center shadow-gold">
             <span className="font-display text-charcoal text-lg font-semibold">V</span>
           </div>
@@ -36,25 +38,27 @@ export function Nav() {
             <div className="font-display text-xl tracking-wide">Vaikuntham</div>
             <div className="text-[10px] uppercase tracking-[0.25em] text-gold">Luxury Estates</div>
           </div>
-        </a>
-        <nav className="hidden lg:flex items-center gap-9">
+        </Link>
+        <nav className="hidden lg:flex items-center gap-8">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm text-muted-foreground hover:text-gold transition-colors relative after:absolute after:inset-x-0 after:-bottom-1 after:h-px after:bg-gold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
+            <Link
+              key={l.to}
+              to={l.to}
+              activeOptions={{ exact: true }}
+              activeProps={{ className: "text-gold" }}
+              className="text-sm text-muted-foreground hover:text-gold transition-colors"
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
         <div className="hidden lg:flex items-center gap-3">
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="px-5 py-2.5 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium hover:shadow-gold transition-shadow"
           >
             Book Consultation
-          </a>
+          </Link>
         </div>
         <button
           className="lg:hidden text-foreground"
@@ -67,17 +71,17 @@ export function Nav() {
       {open && (
         <div className="lg:hidden glass mt-3 mx-4 rounded-2xl p-6 flex flex-col gap-4 animate-fade-in">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-sm">
+            <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-sm">
               {l.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             onClick={() => setOpen(false)}
             className="px-5 py-2.5 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium text-center"
           >
             Book Consultation
-          </a>
+          </Link>
         </div>
       )}
     </header>
