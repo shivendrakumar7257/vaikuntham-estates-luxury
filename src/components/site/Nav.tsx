@@ -25,8 +25,8 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass py-3" : "bg-transparent py-5"
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background border-b ${
+        scrolled ? "border-border shadow-md py-3" : "border-transparent py-5"
       }`}
     >
       <div className="mx-auto max-w-7xl px-6 flex items-center justify-between">
@@ -35,7 +35,7 @@ export function Nav() {
             <span className="font-display text-charcoal text-lg font-semibold">V</span>
           </div>
           <div className="leading-none">
-            <div className="font-display text-xl tracking-wide">Vaikuntham</div>
+            <div className="font-display text-xl tracking-wide text-foreground">Vaikuntham</div>
             <div className="text-[10px] uppercase tracking-[0.25em] text-gold">Luxury Estates</div>
           </div>
         </Link>
@@ -61,7 +61,7 @@ export function Nav() {
           </Link>
         </div>
         <button
-          className="lg:hidden text-foreground"
+          className="lg:hidden text-foreground cursor-pointer"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -69,16 +69,16 @@ export function Nav() {
         </button>
       </div>
       {open && (
-        <div className="lg:hidden glass mt-3 mx-4 rounded-2xl p-6 flex flex-col gap-4 animate-fade-in">
+        <div className="lg:hidden bg-card border border-border shadow-lg mt-3 mx-4 rounded-2xl p-6 flex flex-col gap-4 animate-fade-in">
           {links.map((l) => (
-            <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-sm">
+            <Link key={l.to} to={l.to} onClick={() => setOpen(false)} className="text-sm text-foreground hover:text-gold transition-colors">
               {l.label}
             </Link>
           ))}
           <Link
             to="/contact"
             onClick={() => setOpen(false)}
-            className="px-5 py-2.5 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium text-center"
+            className="px-5 py-2.5 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium text-center hover:shadow-gold"
           >
             Book Consultation
           </Link>
@@ -87,3 +87,5 @@ export function Nav() {
     </header>
   );
 }
+
+

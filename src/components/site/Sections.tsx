@@ -83,7 +83,7 @@ export function Showcase() {
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8">
           <div className="relative aspect-[4/3] lg:aspect-auto overflow-hidden rounded-3xl border border-border">
             <img src={active.img} alt={active.t} loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-opacity duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
               <div className="text-xs uppercase tracking-widest text-gold">Featured</div>
               <h3 className="mt-2 font-display text-3xl md:text-5xl text-foreground">{active.t}</h3>
@@ -274,7 +274,7 @@ export function Projects() {
           {ps.map((p) => (
             <article key={p.t} className="group relative overflow-hidden rounded-3xl border border-border">
               <img src={p.img} alt={p.t} loading="lazy" className="aspect-[3/4] object-cover w-full transition-transform duration-1000 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
               <div className="absolute top-5 left-5">
                 <span className={`px-3 py-1 rounded-full glass-light text-[10px] uppercase tracking-widest border ${color(p.s)}`}>{p.s}</span>
               </div>
@@ -400,7 +400,7 @@ export function Contact() {
           <Field label="Interest" placeholder="Villa in Bengaluru, ₹10–15 Cr" />
           <div>
             <label className="text-[10px] uppercase tracking-widest text-muted-foreground">Message</label>
-            <textarea rows={4} placeholder="Tell us what you are looking for…" className="mt-2 w-full bg-charcoal/40 border border-border rounded-xl px-4 py-3 text-sm outline-none focus:border-gold/50" />
+            <textarea rows={4} placeholder="Tell us what you are looking for…" className="mt-2 w-full bg-muted/40 border border-border rounded-xl px-4 py-3 text-sm outline-none focus:border-gold/50" />
           </div>
           <button type="button" className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-full bg-gradient-gold text-primary-foreground font-medium shadow-gold">
             <Send className="h-4 w-4" /> Request Private Consultation
@@ -429,7 +429,7 @@ function Field({ label, placeholder, type = "text" }: { label: string; placehold
   return (
     <div>
       <label className="text-[10px] uppercase tracking-widest text-muted-foreground">{label}</label>
-      <input type={type} placeholder={placeholder} className="mt-2 w-full bg-charcoal/40 border border-border rounded-xl px-4 py-3 text-sm outline-none focus:border-gold/50" />
+      <input type={type} placeholder={placeholder} className="mt-2 w-full bg-muted/40 border border-border rounded-xl px-4 py-3 text-sm outline-none focus:border-gold/50" />
     </div>
   );
 }
@@ -442,7 +442,7 @@ export function Newsletter() {
         <h2 className="mt-4 font-display text-3xl md:text-4xl">The Vaikuntham Dossier</h2>
         <p className="mt-3 text-muted-foreground">Monthly off-market listings, market intelligence, and private events — delivered with discretion.</p>
         <form className="mt-8 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-          <input type="email" placeholder="your@email.com" className="flex-1 bg-charcoal/40 border border-border rounded-full px-5 py-3 text-sm outline-none focus:border-gold/50" />
+          <input type="email" placeholder="your@email.com" className="flex-1 bg-muted/40 border border-border rounded-full px-5 py-3 text-sm outline-none focus:border-gold/50" />
           <button type="button" className="px-6 py-3 rounded-full bg-gradient-gold text-primary-foreground text-sm font-medium">Subscribe</button>
         </form>
       </div>
@@ -502,17 +502,17 @@ export function FloatingActions() {
       </a>
       <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
         {open && (
-          <div className="glass rounded-2xl p-5 w-80 shadow-luxury animate-fade-in">
+          <div className="bg-card border border-border rounded-2xl p-5 w-80 shadow-luxury animate-fade-in">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-9 w-9 rounded-full bg-gradient-gold grid place-items-center"><Sparkles className="h-4 w-4 text-charcoal" /></div>
               <div>
-                <div className="font-display">Vaikuntham AI</div>
+                <div className="font-display text-foreground">Vaikuntham AI</div>
                 <div className="text-[10px] uppercase tracking-widest text-gold">Property Concierge</div>
               </div>
             </div>
-            <div className="rounded-xl bg-charcoal/40 border border-border p-3 text-sm text-muted-foreground">Hi — I can help you discover villas, calculate EMIs, or book a private viewing. What are you looking for?</div>
+            <div className="rounded-xl bg-muted/40 border border-border p-3 text-sm text-muted-foreground">Hi — I can help you discover villas, calculate EMIs, or book a private viewing. What are you looking for?</div>
             <div className="mt-3 flex gap-2">
-              <input placeholder="Ask anything…" className="flex-1 bg-charcoal/40 border border-border rounded-full px-4 py-2 text-sm outline-none focus:border-gold/50" />
+              <input placeholder="Ask anything…" className="flex-1 bg-muted/40 border border-border rounded-full px-4 py-2 text-sm outline-none focus:border-gold/50" />
               <button className="h-9 w-9 rounded-full bg-gradient-gold grid place-items-center"><Send className="h-4 w-4 text-charcoal" /></button>
             </div>
           </div>

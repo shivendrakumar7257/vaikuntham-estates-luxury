@@ -38,7 +38,7 @@
 
 :root {
   --radius: 0.5rem;
-  /* Charcoal black base */
+  /* Charcoal black base (default primary theme) */
   --background: oklch(0.14 0.012 260);
   --foreground: oklch(0.97 0.005 80);
   --card: oklch(0.18 0.014 260);
@@ -71,6 +71,7 @@
   --shadow-luxury: 0 30px 80px -20px oklch(0 0 0 / 0.6);
   --shadow-gold: 0 10px 40px -10px oklch(0.78 0.13 82 / 0.4);
 }
+
 
 @layer base {
   * {

@@ -83,7 +83,7 @@ export function Hero() {
 
 function SearchField({ icon, label, placeholder }: { icon: React.ReactNode; label: string; placeholder: string }) {
   return (
-    <label className="flex items-center gap-3 rounded-xl bg-charcoal/40 border border-border px-4 py-3 hover:border-gold/40 transition-colors">
+    <label className="flex items-center gap-3 rounded-xl bg-muted/40 border border-border px-4 py-3 hover:border-gold/40 transition-colors">
       <span className="text-gold">{icon}</span>
       <div className="flex flex-col min-w-0 flex-1">
         <span className="text-[10px] uppercase tracking-widest text-muted-foreground">{label}</span>
